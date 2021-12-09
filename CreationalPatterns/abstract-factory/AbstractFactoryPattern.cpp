@@ -7,6 +7,7 @@
 
 #include <iostream>
 
+// product hierarchy
 class AbstractProductA {
 public:
   AbstractProductA() { std::cout << "AbstractProductA" << std::endl; }
@@ -14,12 +15,6 @@ public:
   virtual void checkProduct() = 0;
 };
 
-class AbstractProductB {
-public:
-  AbstractProductB() { std::cout << "AbstractProductB" << std::endl; }
-  virtual  ~AbstractProductB() {}
-  virtual void checkProduct() = 0;
-};
 
 class ProductA1 : public AbstractProductA {
 public:
@@ -37,6 +32,14 @@ public:
 
 };
 
+class AbstractProductB {
+public:
+  AbstractProductB() { std::cout << "AbstractProductB" << std::endl; }
+  virtual  ~AbstractProductB() {}
+  virtual void checkProduct() = 0;
+};
+
+
 class ProductB1 : public AbstractProductB {
 public:
   ProductB1() { std::cout << "ProductB1" << std::endl; }
@@ -52,6 +55,9 @@ public:
   void checkProduct() { std::cout << "ProductB2 has been created" << std::endl; }
 
 };
+
+
+// platform hierarchy
 
 class AbstractFactory {
 public:
@@ -76,6 +82,7 @@ public:
   AbstractProductA* createProductA() { return new ProductA2; }
   AbstractProductB* createProductB() { return new ProductB2; }
 };
+
 
 int main(int argc, char* argv[]) {
   AbstractFactory* cf1 = new ConcreateFactory1();

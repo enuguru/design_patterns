@@ -52,7 +52,8 @@ public:
 
 int main(int argc, char* argv[]) {
   Creater *creater = new ConcreateCreater;
-
+  // objone = Concreteproudct();
+  // creator->factorymethod(argv[1]);
   Product *productA = creater->createProductA();
   productA->checkProduct();
 
@@ -60,3 +61,4 @@ int main(int argc, char* argv[]) {
   productB->checkProduct();
 
 }
+
