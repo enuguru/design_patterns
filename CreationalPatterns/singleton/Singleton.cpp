@@ -33,5 +33,6 @@ Singleton* Singleton::instance_ = nullptr;
 int main(int argc, char* argv[]) {
   Singleton *singleton = Singleton::instance();
   Singleton *singletonone = Singleton::instance();
+  Singleton *singletontwo = Singleton::instance();
   singleton->checkSingleton();
 }

@@ -8,6 +8,7 @@
 //    composition, Composite "has a" set of children up the "is a" hierarchy)
 // 5. "Container" classes use polymorphism as they delegate to their children
 
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -21,6 +22,7 @@ public:
    Leaf( int val ) { value = val; }
    void traverse() { cout << value << ' '; }
 };
+
 
 class Composite : public Component {   // 1. Vector class   3. "isa" relationship
    vector<Component*> children;        // 4. "container" coupled to the interface
